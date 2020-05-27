@@ -1,0 +1,34 @@
+"run.py" will connect to the all devices in the "devices_file",
+through ssh with credentials in the "credential" file, 
+and run the list of comands in the "commands_list" file : 
+
+==============================================================
+credential.encrypted:
+This file has encrypted . list of all devices and their credentials.
+This file can be generated form credential files with following format,
+by "simply-encrypt" python modules. (use, encryptor.py to encrypt credentail file)
+important = this file is in the ".secrects" folder in the root of project,
+that is in the git ignore file lists! decrypted file format is:
+
+192.167.1.20,username,password 
+
+================================================================
+commands_list_ipaddress:
+this file consist of all requiered command in sequnse to run after ssh to device,like:
+# cat commnad_list_192.168.1.20
+
+show ip int brief
+.
+.
+#
+
+================================================================
+devices_file :
+A file in the root of the project, that consist all of device for run.py.
+each line has the following format:
+
+192.168.1.20, syd-dmz, syd-sw100
+192.168.1.51, syd-sw, syd-sw102
+192.168.1.121, syd-wap, syd-wap201 
+. 
+.
